@@ -1,12 +1,12 @@
-Reliance Infra – Google Trends Analytics Dashboard
-Overview
+# Reliance Infra – Google Trends Analytics Dashboard
+## Overview
 This project tracks real‑time public search interest for Reliance Infra share price using Google Trends data.
 It extracts data programmatically with Python, performs exploratory data analysis (EDA), and builds an interactive Power BI dashboard to visualize insights.
 
-This pipeline is automated for daily refresh, making it useful for investors, analysts, and market researchers to monitor market buzz and investor sentiment.
+The pipeline is automated for daily refresh, making it useful for investors, analysts, and market researchers to monitor market buzz and investor sentiment.
 
-Key Features
-Automated Data Extraction – Uses pytrends to pull:
+## Key Features
+Automated Data Extraction (via pytrends):
 
 Interest over time (minute/hourly level trends)
 
@@ -14,13 +14,13 @@ Interest by region (state‑wise data)
 
 Interest by categories (e.g., Finance, Business, News)
 
-Exploratory Data Analysis (EDA):
+## Exploratory Data Analysis (EDA):
 
 Detects spikes and patterns in search behavior.
 
 Highlights top performing regions and categories.
 
-Interactive Power BI Dashboard:
+## Interactive Power BI Dashboard:
 
 Current Interest Score (latest day)
 
@@ -34,43 +34,39 @@ Top Category
 
 Automated Refresh:
 
-Daily execution via Windows Task Scheduler or Power BI Service Scheduled Refresh.
+Daily execution via Windows Task Scheduler
 
-Business Questions Answered
+Power BI Service Scheduled Refresh
+
+## Business Questions Answered
 How is public interest changing?
-
 Are people searching more for Reliance Infra compared to yesterday?
 
 When are people searching the most?
-
-What times of the day see the highest spikes in searches?
+What times of the day see the highest spikes?
 
 Where is the interest coming from?
+Which Indian states are driving search interest?
 
-Which Indian states are driving the most search interest?
+What categories drive the search?
+Is the interest coming from finance, business, or other contexts?
 
-What categories are driving the search?
+Can this signal market activity?
+Are search spikes correlated with news events or stock movements?
 
-Is the search interest coming from finance, business, or other contexts?
-
-Are there early signals for market activity?
-
-Can spikes in search data correlate with price movement or news events?
-
-Tech Stack
+## Tech Stack
 Python: pytrends, pandas, matplotlib, seaborn
 
-Power BI: For interactive dashboard & KPIs
+Power BI: Interactive dashboard & KPIs
 
-Automation:
+## Automation:
 
 Windows Task Scheduler for Python script automation
 
 Power BI Service for scheduled dashboard refresh
 
-Project Workflow
-Data Extraction
-
+## Project Workflow
+1. Data Extraction
 python
 Copy
 Edit
@@ -87,49 +83,52 @@ reliance_trends_region.csv – Interest by region
 
 reliance_trends_category.csv – Interest by category
 
-EDA & Insights
+2. EDA & Insights
+Identify peak search times
 
-Identify peak search times.
+Compare search volumes across categories
 
-Compare search volumes across categories.
+Map top contributing states
 
-Map top contributing states.
+3. Power BI Dashboard
+Visuals Created:
 
-Power BI Dashboard
+Line charts → Interest over time
 
-Import CSVs → Create visuals:
+Maps → Top regions
 
-Line charts (interest over time)
+KPIs → Current interest, % change
 
-Maps (top regions)
+Bar charts → Top categories
 
-KPIs (Current interest, % change)
+![Dashboard Overview](Screenshot 2025-07-25 213425.png)
 
-Bar charts (top categories)
+4. Automation
+Windows Task Scheduler: Runs the Python script daily
 
-Automation
+Power BI Scheduled Refresh: Auto‑updates dashboard
 
-Windows Task Scheduler: Runs Python script daily.
+Dashboard Overview:
 
-Power BI Scheduled Refresh: Auto‑updates dashboard.
+KPI Cards:
 
 How to Run
-Clone the repo:
-
+1. Clone the repository
 bash
 Copy
 Edit
 git clone https://github.com/yourusername/reliance-trends-dashboard.git
-Install dependencies:
-
+2. Install dependencies
 bash
 Copy
 Edit
 pip install pandas pytrends matplotlib seaborn
-Run the script:
-
+3. Run the script
 bash
 Copy
 Edit
-python Reliance_Infra.py
-Open Power BI and load the CSV files.
+python scripts/Reliance_Infra.py
+4. Load into Power BI
+Open Power BI → Import the CSVs from /data
+
+Refresh to view latest data
