@@ -101,8 +101,6 @@ KPIs → Current interest, % change
 
 Bar charts → Top categories
 
-![Dashboard Overview](Screenshot 2025-07-25 213425.png)
-
 4. Automation
 Windows Task Scheduler: Runs the Python script daily
 
